@@ -166,7 +166,7 @@
                     album : this.album
                 }).then(response => {
                     this.waiting = false;
-                    this.$bvModal.show('song-modal');
+                    this.$bvModal.hide('song-modal');
                     this.getMusicList();
                 }).catch(error => {
                     console.log(error);
