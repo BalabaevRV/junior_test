@@ -86,7 +86,7 @@
         <b-modal id="song-modal" centered hide-footer>
             <div class="modal-center d-flex flex-column mx-auto">
                 <div class="text-center">
-                     <b-img :src="avatar" rounded="circle" alt="Аватар исполнителя" width="132" height="132"></b-img>
+                     <b-img :src="cover" rounded="circle" alt="Обложка альбома" width="132" height="132"></b-img>
                 </div>
                 <div class="form-block">
                     <b-form-group label="Ссылка на звук в TikTok" label-for="song-input" invalid-feedback="Ссылка не указана" label-class="song__label">
@@ -137,7 +137,7 @@
                 titleSong: "",
                 author: "",
                 album: "",
-                avatar: "/img/blankAvatar.png"             
+                cover: "/img/blankAvatar.png"             
             }
         },
         mounted() {
@@ -182,18 +182,14 @@
                 if (music) {
                     this.titleSong = (music.title) ? music.title : "";
                     this.album = (music.album) ? music.album : "";
+                    this.cover = (music.coverThumb) ? music.coverThumb : "/img/blankAvatar.png" ;
+                    this.author = (music.authorName) ? music.authorName : "Исполнитель неизвестен" ;
                 } else {
                    this.titleSong = "";
                    this.album = ""; 
-                };
-
-                if (artist) { 
-                    this.author = (artist.nickname) ? artist.nickname : "Исполнитель неизвестен" ;
-                    this.avatar = (artist.avatarThumb) ? artist.avatarThumb : "/img/blankAvatar.png" ;
-                } else {
-                    this.author = "";
-                    this.avatar = "/img/blankAvatar.png";    
-                }       
+                    this.authorName = "";
+                    this.cover = "/img/blankAvatar.png";    
+                };    
             },
             getMusic(url) {
                 this.waiting = true;
@@ -201,6 +197,7 @@
                 axios.post(GET_MUSIC, {url: url}).then(response => {
                     this.waiting = false;
                     this.song = response.data;
+                    console.log(response.data);
                     this.setSongParams(response.data);
                     this.$bvModal.hide('music-modal');
                     this.$bvModal.show('song-modal');
