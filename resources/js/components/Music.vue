@@ -197,7 +197,6 @@
                 axios.post(GET_MUSIC, {url: url}).then(response => {
                     this.waiting = false;
                     this.song = response.data;
-                    console.log(response.data);
                     this.setSongParams(response.data);
                     this.$bvModal.hide('music-modal');
                     this.$bvModal.show('song-modal');
