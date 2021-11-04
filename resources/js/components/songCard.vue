@@ -27,25 +27,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-    .roundedImg {
-        border-radius: 50%;
-    }
-
-    .song__author {
-        font-weight: 600;
-        font-size: 19px;
-        line-height: 23px;
-        color: #808191;
-
-    }
-
-    .song__title {
-        font-weight: 600;
-        font-size: 13px;
-        line-height: 18px;
-        color: #808191;
-    }
-
-</style>
