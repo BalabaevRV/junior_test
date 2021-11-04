@@ -7,7 +7,7 @@
                     <div class="page__welcome h2">Привет 👋</div>
                 </div>
 
-                <div class="mt-4 mt-sm-0">
+                <div class="mt-4 mt-sm-0" v-if="items">
                     <p class="mb-2">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle class="color" cx="7" cy="7" r="6.5" fill="#7FBA7A"/>

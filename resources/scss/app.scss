@@ -1564,11 +1564,12 @@ body.dark .nav-tabs .nav-link.active {
   position: absolute;
   top: 0;
   width:100%;
+  min-width: 820px;
   height: 100%;
   z-index: 0;
 }
 
-@media only screen and (max-width: 1030px)  {
+@media only screen and (max-width: 900px)  {
   .banner__img {
       background-image: url(../img/bannerPhotoTablet.png), url(../img/bannerBG.png);
       background-position-x: right;  
