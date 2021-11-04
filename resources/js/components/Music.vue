@@ -26,14 +26,14 @@
             </div>
         </div>
 
-        <div class="page__row" v-if="mobile">
+        <div class="page__row" v-if="mobile && items">
             <div class="d-flex flex-row align-items-center justify-content-between">
                 <h1>Мои треки</h1>
                 <img :src="url + 'img/icon_plus_main.svg'" @click="openMusicModal" class="mb-2" />
             </div>
         </div>
 
-        <div class="page__row" v-if="mobile">
+        <div class="page__row" v-if="mobile && items">
              <div class="page__panel">
                 <p>
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
