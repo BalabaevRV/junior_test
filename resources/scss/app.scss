@@ -1572,24 +1572,37 @@ body.dark .nav-tabs .nav-link.active {
   .banner__img {
       background-image: url(../img/bannerPhotoTablet.png), url(../img/bannerBG.png);
       background-position-x: right;  
+      min-width: 580px;
   }  
 }
 
-@media only screen and (max-width: 660px)  {
+@media only screen and (max-width: 580px)  {
   .banner {
       height: 500px; 
-      width: 310px;
+      width: 100%;
       margin: 0 auto;
   }  
 
   .banner__img {
-      background-image: url(../img/bannerPhotoMobile.png), url(../img/bannerBGMobile.png);
-      top: auto;
-      bottom: 0;
-      background-position-y: 140px, 175px;  
-  }    
+    background-image: url(../img/bannerPhotoMobile.png), url(../img/bannerBGMobile.png);
+    top: auto;
+    bottom: 0;
+    background-position-x: right, -90px;  
+    background-position-y: 140px, 170px;  
+    min-width: 540px;
+}   
+} 
 
-}
+@media only screen and (max-width: 420px)  {
+  .banner__img {
+    right: -220px;
+  }
+
+  .banner__text br {
+    display: none;
+  }
+
+} 
 
 .banner__item {
   margin-bottom: 20px;
